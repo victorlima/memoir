@@ -11,6 +11,8 @@
 
 @interface WrongInterfaceController()
 
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *lblWrongs;
+@property (strong, nonatomic) NSString *wrongs;
 @end
 
 
@@ -19,11 +21,13 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
+    if( context )
+        self.wrongs = [NSString stringWithFormat:@"Wrongs: %@", (NSNumber*)[context stringValue]];
 }
 
 - (void)willActivate {
     [super willActivate];
-    
+    [self.lblWrongs setText:self.wrongs];
 }
 
 - (void)didDeactivate {

@@ -70,7 +70,14 @@
                                 <action selector="dismiss:" destination="JEE-Bc-nBb" id="Tm3-1z-F9D"/>
                             </connections>
                         </button>
+                        <label width="1" height="35" alignment="left" text="..." textAlignment="center" id="Jy9-b0-bbi">
+                            <color key="textColor" red="1" green="0.01775118782" blue="0.084778211849999993" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                        </label>
                     </items>
+                    <connections>
+                        <outlet property="lblWrongs" destination="Jy9-b0-bbi" id="70i-rY-dcu"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="243" y="680"/>

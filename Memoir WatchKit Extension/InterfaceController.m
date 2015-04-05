@@ -106,7 +106,7 @@
         if( !isCorrect )
         {
             self.wrongs = [NSNumber numberWithInt:[self.wrongs intValue] + 1];
-            [self presentControllerWithName:@"WrongChoiceInterfaceController" context:nil];
+            [self presentControllerWithName:@"WrongChoiceInterfaceController" context:self.wrongs];
             
             return;
         }
