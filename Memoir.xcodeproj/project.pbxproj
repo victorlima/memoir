@@ -1,0 +1,675 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAD5EBFD1AD1A13000369663 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5EBFC1AD1A13000369663 /* main.m */; };
+		AAD5EC001AD1A13000369663 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5EBFF1AD1A13000369663 /* AppDelegate.m */; };
+		AAD5EC031AD1A13000369663 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5EC021AD1A13000369663 /* ViewController.m */; };
+		AAD5EC061AD1A13000369663 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAD5EC041AD1A13000369663 /* Main.storyboard */; };
+		AAD5EC081AD1A13000369663 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD5EC071AD1A13000369663 /* Images.xcassets */; };
+		AAD5EC0B1AD1A13000369663 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD5EC091AD1A13000369663 /* LaunchScreen.xib */; };
+		AAD5EC171AD1A13000369663 /* MemoirTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5EC161AD1A13000369663 /* MemoirTests.m */; };
+		AAD5EC2A1AD1A15500369663 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5EC291AD1A15500369663 /* InterfaceController.m */; };
+		AAD5EC2C1AD1A15500369663 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD5EC2B1AD1A15500369663 /* Images.xcassets */; };
+		AAD5EC301AD1A15500369663 /* Memoir WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = AAD5EC2F1AD1A15500369663 /* Memoir WatchKit App.app */; };
+		AAD5EC381AD1A15500369663 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAD5EC361AD1A15500369663 /* Interface.storyboard */; };
+		AAD5EC3A1AD1A15500369663 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD5EC391AD1A15500369663 /* Images.xcassets */; };
+		AAD5EC3D1AD1A15500369663 /* Memoir WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AAD5EC241AD1A15500369663 /* Memoir WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAD5EC111AD1A13000369663 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAD5EBEF1AD1A13000369663 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAD5EBF61AD1A13000369663;
+			remoteInfo = Memoir;
+		};
+		AAD5EC311AD1A15500369663 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAD5EBEF1AD1A13000369663 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAD5EC2E1AD1A15500369663;
+			remoteInfo = "Memoir WatchKit App";
+		};
+		AAD5EC3B1AD1A15500369663 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAD5EBEF1AD1A13000369663 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAD5EC231AD1A15500369663;
+			remoteInfo = "Memoir WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AAD5EC441AD1A15500369663 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AAD5EC3D1AD1A15500369663 /* Memoir WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AAD5EBF71AD1A13000369663 /* Memoir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoir.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAD5EBFB1AD1A13000369663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAD5EBFC1AD1A13000369663 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AAD5EBFE1AD1A13000369663 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AAD5EBFF1AD1A13000369663 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AAD5EC011AD1A13000369663 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AAD5EC021AD1A13000369663 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AAD5EC051AD1A13000369663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AAD5EC071AD1A13000369663 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AAD5EC0A1AD1A13000369663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AAD5EC101AD1A13000369663 /* MemoirTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoirTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAD5EC151AD1A13000369663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAD5EC161AD1A13000369663 /* MemoirTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoirTests.m; sourceTree = "<group>"; };
+		AAD5EC241AD1A15500369663 /* Memoir WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Memoir WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAD5EC271AD1A15500369663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAD5EC281AD1A15500369663 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		AAD5EC291AD1A15500369663 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		AAD5EC2B1AD1A15500369663 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AAD5EC2F1AD1A15500369663 /* Memoir WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memoir WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAD5EC351AD1A15500369663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAD5EC371AD1A15500369663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		AAD5EC391AD1A15500369663 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAD5EBF41AD1A13000369663 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAD5EC0D1AD1A13000369663 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAD5EC211AD1A15500369663 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAD5EBEE1AD1A13000369663 = {
+			isa = PBXGroup;
+			children = (
+				AAD5EBF91AD1A13000369663 /* Memoir */,
+				AAD5EC131AD1A13000369663 /* MemoirTests */,
+				AAD5EC251AD1A15500369663 /* Memoir WatchKit Extension */,
+				AAD5EC331AD1A15500369663 /* Memoir WatchKit App */,
+				AAD5EBF81AD1A13000369663 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAD5EBF81AD1A13000369663 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAD5EBF71AD1A13000369663 /* Memoir.app */,
+				AAD5EC101AD1A13000369663 /* MemoirTests.xctest */,
+				AAD5EC241AD1A15500369663 /* Memoir WatchKit Extension.appex */,
+				AAD5EC2F1AD1A15500369663 /* Memoir WatchKit App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAD5EBF91AD1A13000369663 /* Memoir */ = {
+			isa = PBXGroup;
+			children = (
+				AAD5EBFE1AD1A13000369663 /* AppDelegate.h */,
+				AAD5EBFF1AD1A13000369663 /* AppDelegate.m */,
+				AAD5EC011AD1A13000369663 /* ViewController.h */,
+				AAD5EC021AD1A13000369663 /* ViewController.m */,
+				AAD5EC041AD1A13000369663 /* Main.storyboard */,
+				AAD5EC071AD1A13000369663 /* Images.xcassets */,
+				AAD5EC091AD1A13000369663 /* LaunchScreen.xib */,
+				AAD5EBFA1AD1A13000369663 /* Supporting Files */,
+			);
+			path = Memoir;
+			sourceTree = "<group>";
+		};
+		AAD5EBFA1AD1A13000369663 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAD5EBFB1AD1A13000369663 /* Info.plist */,
+				AAD5EBFC1AD1A13000369663 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAD5EC131AD1A13000369663 /* MemoirTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAD5EC161AD1A13000369663 /* MemoirTests.m */,
+				AAD5EC141AD1A13000369663 /* Supporting Files */,
+			);
+			path = MemoirTests;
+			sourceTree = "<group>";
+		};
+		AAD5EC141AD1A13000369663 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAD5EC151AD1A13000369663 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAD5EC251AD1A15500369663 /* Memoir WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AAD5EC281AD1A15500369663 /* InterfaceController.h */,
+				AAD5EC291AD1A15500369663 /* InterfaceController.m */,
+				AAD5EC2B1AD1A15500369663 /* Images.xcassets */,
+				AAD5EC261AD1A15500369663 /* Supporting Files */,
+			);
+			path = "Memoir WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		AAD5EC261AD1A15500369663 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAD5EC271AD1A15500369663 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAD5EC331AD1A15500369663 /* Memoir WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				AAD5EC361AD1A15500369663 /* Interface.storyboard */,
+				AAD5EC391AD1A15500369663 /* Images.xcassets */,
+				AAD5EC341AD1A15500369663 /* Supporting Files */,
+			);
+			path = "Memoir WatchKit App";
+			sourceTree = "<group>";
+		};
+		AAD5EC341AD1A15500369663 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAD5EC351AD1A15500369663 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAD5EBF61AD1A13000369663 /* Memoir */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAD5EC1A1AD1A13000369663 /* Build configuration list for PBXNativeTarget "Memoir" */;
+			buildPhases = (
+				AAD5EBF31AD1A13000369663 /* Sources */,
+				AAD5EBF41AD1A13000369663 /* Frameworks */,
+				AAD5EBF51AD1A13000369663 /* Resources */,
+				AAD5EC441AD1A15500369663 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAD5EC3C1AD1A15500369663 /* PBXTargetDependency */,
+			);
+			name = Memoir;
+			productName = Memoir;
+			productReference = AAD5EBF71AD1A13000369663 /* Memoir.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AAD5EC0F1AD1A13000369663 /* MemoirTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAD5EC1D1AD1A13000369663 /* Build configuration list for PBXNativeTarget "MemoirTests" */;
+			buildPhases = (
+				AAD5EC0C1AD1A13000369663 /* Sources */,
+				AAD5EC0D1AD1A13000369663 /* Frameworks */,
+				AAD5EC0E1AD1A13000369663 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAD5EC121AD1A13000369663 /* PBXTargetDependency */,
+			);
+			name = MemoirTests;
+			productName = MemoirTests;
+			productReference = AAD5EC101AD1A13000369663 /* MemoirTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AAD5EC231AD1A15500369663 /* Memoir WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAD5EC411AD1A15500369663 /* Build configuration list for PBXNativeTarget "Memoir WatchKit Extension" */;
+			buildPhases = (
+				AAD5EC201AD1A15500369663 /* Sources */,
+				AAD5EC211AD1A15500369663 /* Frameworks */,
+				AAD5EC221AD1A15500369663 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAD5EC321AD1A15500369663 /* PBXTargetDependency */,
+			);
+			name = "Memoir WatchKit Extension";
+			productName = "Memoir WatchKit Extension";
+			productReference = AAD5EC241AD1A15500369663 /* Memoir WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		AAD5EC2E1AD1A15500369663 /* Memoir WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAD5EC3E1AD1A15500369663 /* Build configuration list for PBXNativeTarget "Memoir WatchKit App" */;
+			buildPhases = (
+				AAD5EC2D1AD1A15500369663 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Memoir WatchKit App";
+			productName = "Memoir WatchKit App";
+			productReference = AAD5EC2F1AD1A15500369663 /* Memoir WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAD5EBEF1AD1A13000369663 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Some Org";
+				TargetAttributes = {
+					AAD5EBF61AD1A13000369663 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					AAD5EC0F1AD1A13000369663 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = AAD5EBF61AD1A13000369663;
+					};
+					AAD5EC231AD1A15500369663 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					AAD5EC2E1AD1A15500369663 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = AAD5EBF21AD1A13000369663 /* Build configuration list for PBXProject "Memoir" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AAD5EBEE1AD1A13000369663;
+			productRefGroup = AAD5EBF81AD1A13000369663 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAD5EBF61AD1A13000369663 /* Memoir */,
+				AAD5EC0F1AD1A13000369663 /* MemoirTests */,
+				AAD5EC231AD1A15500369663 /* Memoir WatchKit Extension */,
+				AAD5EC2E1AD1A15500369663 /* Memoir WatchKit App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAD5EBF51AD1A13000369663 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAD5EC061AD1A13000369663 /* Main.storyboard in Resources */,
+				AAD5EC0B1AD1A13000369663 /* LaunchScreen.xib in Resources */,
+				AAD5EC081AD1A13000369663 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAD5EC0E1AD1A13000369663 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAD5EC221AD1A15500369663 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAD5EC2C1AD1A15500369663 /* Images.xcassets in Resources */,
+				AAD5EC301AD1A15500369663 /* Memoir WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAD5EC2D1AD1A15500369663 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAD5EC381AD1A15500369663 /* Interface.storyboard in Resources */,
+				AAD5EC3A1AD1A15500369663 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAD5EBF31AD1A13000369663 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAD5EC031AD1A13000369663 /* ViewController.m in Sources */,
+				AAD5EC001AD1A13000369663 /* AppDelegate.m in Sources */,
+				AAD5EBFD1AD1A13000369663 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAD5EC0C1AD1A13000369663 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAD5EC171AD1A13000369663 /* MemoirTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAD5EC201AD1A15500369663 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAD5EC2A1AD1A15500369663 /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAD5EC121AD1A13000369663 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAD5EBF61AD1A13000369663 /* Memoir */;
+			targetProxy = AAD5EC111AD1A13000369663 /* PBXContainerItemProxy */;
+		};
+		AAD5EC321AD1A15500369663 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAD5EC2E1AD1A15500369663 /* Memoir WatchKit App */;
+			targetProxy = AAD5EC311AD1A15500369663 /* PBXContainerItemProxy */;
+		};
+		AAD5EC3C1AD1A15500369663 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAD5EC231AD1A15500369663 /* Memoir WatchKit Extension */;
+			targetProxy = AAD5EC3B1AD1A15500369663 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AAD5EC041AD1A13000369663 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAD5EC051AD1A13000369663 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AAD5EC091AD1A13000369663 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAD5EC0A1AD1A13000369663 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		AAD5EC361AD1A15500369663 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAD5EC371AD1A15500369663 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAD5EC181AD1A13000369663 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AAD5EC191AD1A13000369663 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AAD5EC1B1AD1A13000369663 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Memoir/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AAD5EC1C1AD1A13000369663 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Memoir/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AAD5EC1E1AD1A13000369663 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MemoirTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memoir.app/Memoir";
+			};
+			name = Debug;
+		};
+		AAD5EC1F1AD1A13000369663 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MemoirTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memoir.app/Memoir";
+			};
+			name = Release;
+		};
+		AAD5EC3F1AD1A15500369663 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Memoir_WatchKit_Extension;
+				INFOPLIST_FILE = "Memoir WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		AAD5EC401AD1A15500369663 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Memoir_WatchKit_Extension;
+				INFOPLIST_FILE = "Memoir WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		AAD5EC421AD1A15500369663 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Memoir WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AAD5EC431AD1A15500369663 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Memoir WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAD5EBF21AD1A13000369663 /* Build configuration list for PBXProject "Memoir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAD5EC181AD1A13000369663 /* Debug */,
+				AAD5EC191AD1A13000369663 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAD5EC1A1AD1A13000369663 /* Build configuration list for PBXNativeTarget "Memoir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAD5EC1B1AD1A13000369663 /* Debug */,
+				AAD5EC1C1AD1A13000369663 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AAD5EC1D1AD1A13000369663 /* Build configuration list for PBXNativeTarget "MemoirTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAD5EC1E1AD1A13000369663 /* Debug */,
+				AAD5EC1F1AD1A13000369663 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AAD5EC3E1AD1A15500369663 /* Build configuration list for PBXNativeTarget "Memoir WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAD5EC3F1AD1A15500369663 /* Debug */,
+				AAD5EC401AD1A15500369663 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AAD5EC411AD1A15500369663 /* Build configuration list for PBXNativeTarget "Memoir WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAD5EC421AD1A15500369663 /* Debug */,
+				AAD5EC431AD1A15500369663 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAD5EBEF1AD1A13000369663 /* Project object */;
+}
