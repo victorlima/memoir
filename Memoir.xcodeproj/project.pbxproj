@@ -20,6 +20,7 @@
 		AAD5EC381AD1A15500369663 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAD5EC361AD1A15500369663 /* Interface.storyboard */; };
 		AAD5EC3A1AD1A15500369663 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD5EC391AD1A15500369663 /* Images.xcassets */; };
 		AAD5EC3D1AD1A15500369663 /* Memoir WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AAD5EC241AD1A15500369663 /* Memoir WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AAD5EC491AD1AC6300369663 /* WrongInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5EC481AD1AC6300369663 /* WrongInterfaceController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		AAD5EC351AD1A15500369663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAD5EC371AD1A15500369663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		AAD5EC391AD1A15500369663 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AAD5EC471AD1AC6300369663 /* WrongInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrongInterfaceController.h; sourceTree = "<group>"; };
+		AAD5EC481AD1AC6300369663 /* WrongInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrongInterfaceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +179,8 @@
 		AAD5EC251AD1A15500369663 /* Memoir WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AAD5EC471AD1AC6300369663 /* WrongInterfaceController.h */,
+				AAD5EC481AD1AC6300369663 /* WrongInterfaceController.m */,
 				AAD5EC281AD1A15500369663 /* InterfaceController.h */,
 				AAD5EC291AD1A15500369663 /* InterfaceController.m */,
 				AAD5EC2B1AD1A15500369663 /* Images.xcassets */,
@@ -390,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAD5EC2A1AD1A15500369663 /* InterfaceController.m in Sources */,
+				AAD5EC491AD1AC6300369663 /* WrongInterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

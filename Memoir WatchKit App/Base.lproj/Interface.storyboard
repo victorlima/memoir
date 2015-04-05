@@ -52,12 +52,16 @@
         <!--WrongChoiceInterfaceController-->
         <scene sceneID="83E-fW-77j">
             <objects>
-                <controller identifier="WrongChoiceInterfaceController" id="JEE-Bc-nBb">
+                <controller identifier="WrongChoiceInterfaceController" id="JEE-Bc-nBb" customClass="WrongInterfaceController">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="WRONG" id="SLM-xn-LUL">
-                            <color key="textColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                        </label>
+                        <button width="1" alignment="center" verticalAlignment="center" title="WRONG" id="OJc-z1-OPS">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                            <connections>
+                                <action selector="dismiss:" destination="JEE-Bc-nBb" id="Tm3-1z-F9D"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
