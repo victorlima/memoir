@@ -41,7 +41,7 @@
     }
     else
     {
-        self.step = [NSNumber numberWithInt:0];
+        self.step = [NSNumber numberWithInt:1];
         self.wrongs = [NSNumber numberWithInt:0];
     }
     
@@ -52,7 +52,7 @@
 - (void)willActivate {
     [super willActivate];
     
-    NSString *text =[NSString stringWithFormat:@"step: %@, wrong: %@", [self.step stringValue], [self.wrongs stringValue]];
+    NSString *text =[NSString stringWithFormat:@"step: %@, wrongs: %@", [self.step stringValue], [self.wrongs stringValue]];
     [self.lblStepsAndWrongs setText:text];
 }
 
@@ -123,6 +123,10 @@
         [self.redButton setBackgroundColor:[UIColor grayColor]];
         [self.blueButton setBackgroundColor:[UIColor grayColor]];
         [self.greenButton setBackgroundColor:[UIColor grayColor]];
+        
+        [self.redButton setEnabled: NO];
+        [self.blueButton setEnabled: NO];
+        [self.greenButton setEnabled: NO];
     }
     
     if( [color isEqualToString:@"blue"] )
@@ -130,6 +134,10 @@
         [self.redButton setBackgroundColor:[UIColor grayColor]];
         [self.yellowButton setBackgroundColor:[UIColor grayColor]];
         [self.greenButton setBackgroundColor:[UIColor grayColor]];
+
+        [self.redButton setEnabled: NO];
+        [self.yellowButton setEnabled: NO];
+        [self.greenButton setEnabled: NO];
     }
     
     if( [color isEqualToString:@"green"] )
@@ -137,6 +145,10 @@
         [self.redButton setBackgroundColor:[UIColor grayColor]];
         [self.yellowButton setBackgroundColor:[UIColor grayColor]];
         [self.blueButton setBackgroundColor:[UIColor grayColor]];
+
+        [self.redButton setEnabled: NO];
+        [self.yellowButton setEnabled: NO];
+        [self.blueButton setEnabled: NO];
     }
 
     if( [color isEqualToString:@"red"] )
@@ -144,6 +156,10 @@
         [self.greenButton setBackgroundColor:[UIColor grayColor]];
         [self.yellowButton setBackgroundColor:[UIColor grayColor]];
         [self.blueButton setBackgroundColor:[UIColor grayColor]];
+
+        [self.greenButton setEnabled: NO];
+        [self.yellowButton setEnabled: NO];
+        [self.blueButton setEnabled: NO];
     }
     
     [self pushControllerWithName:@"MemoirInterfaceController" context:@{@"wrongs" : self.wrongs, @"step" : self.step}];
