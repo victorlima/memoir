@@ -22,7 +22,19 @@
     [super awakeWithContext:context];
     
     if( context )
-        self.wrongs = [NSString stringWithFormat:@"Wrongs: %@", (NSNumber*)[context stringValue]];
+    {
+        if( [context intValue] == 1 )
+            self.wrongs = [NSString stringWithFormat:@"Your are wrong for the first time"];
+        
+        if( [context intValue] == 2 )
+            self.wrongs = [NSString stringWithFormat:@"Your are wrong for the second time"];
+        
+        if( [context intValue] == 3 )
+            self.wrongs = [NSString stringWithFormat:@"Your are wrong for the third time"];
+        
+        if( [context intValue] > 3 )
+            self.wrongs = [NSString stringWithFormat:@"Your are wrong for the %@th time", (NSNumber*)[context stringValue]];
+    }
 }
 
 - (void)willActivate {

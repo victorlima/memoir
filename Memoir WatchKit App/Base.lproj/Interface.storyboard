@@ -10,9 +10,14 @@
             <objects>
                 <controller identifier="MemoirInterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label width="134" height="20" alignment="left" text="..." textAlignment="center" id="E89-by-X8s">
-                            <color key="textColor" red="0.0" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </label>
+                        <group width="1" alignment="left" id="31J-Kw-Abc">
+                            <items>
+                                <label width="0.5" height="20" alignment="left" text="..." textAlignment="center" id="E89-by-X8s">
+                                    <color key="textColor" red="0.0" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <timer width="0.5" alignment="left" textAlignment="right" id="t8j-XJ-Ezh"/>
+                            </items>
+                        </group>
                         <group width="1" height="61" alignment="left" id="PFw-5a-koE">
                             <items>
                                 <button width="0.5" height="1" alignment="left" id="3GP-33-xjP">
@@ -51,6 +56,7 @@
                         <outlet property="greenButton" destination="UHg-9i-OmB" id="1Rz-zF-gtc"/>
                         <outlet property="lblStepsAndWrongs" destination="E89-by-X8s" id="loB-kJ-UHa"/>
                         <outlet property="redButton" destination="GQd-eN-Gak" id="r2D-PJ-wGA"/>
+                        <outlet property="tmrCountUp" destination="t8j-XJ-Ezh" id="AQm-ml-4g0"/>
                         <outlet property="yellowButton" destination="3GP-33-xjP" id="K7c-OC-8Xo"/>
                     </connections>
                 </controller>
@@ -62,7 +68,7 @@
             <objects>
                 <controller identifier="WrongChoiceInterfaceController" id="JEE-Bc-nBb" customClass="WrongInterfaceController">
                     <items>
-                        <button width="1" alignment="center" verticalAlignment="center" title="WRONG" id="OJc-z1-OPS">
+                        <button width="1" alignment="center" verticalAlignment="center" title="OK! Got It" id="OJc-z1-OPS">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="boldSystem" pointSize="15"/>
@@ -70,7 +76,7 @@
                                 <action selector="dismiss:" destination="JEE-Bc-nBb" id="Tm3-1z-F9D"/>
                             </connections>
                         </button>
-                        <label width="1" height="35" alignment="left" text="..." textAlignment="center" id="Jy9-b0-bbi">
+                        <label width="1" alignment="left" text="..." textAlignment="center" numberOfLines="0" id="Jy9-b0-bbi">
                             <color key="textColor" red="1" green="0.01775118782" blue="0.084778211849999993" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="boldSystem" pointSize="16"/>
                         </label>

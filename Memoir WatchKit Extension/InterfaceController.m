@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceButton *blueButton;
 @property (weak, nonatomic) IBOutlet WKInterfaceButton *greenButton;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *lblStepsAndWrongs;
+@property (weak, nonatomic) IBOutlet WKInterfaceTimer *tmrCountUp;
 
 @property (strong, nonatomic) NSNumber *step;
 @property (strong, nonatomic) NSNumber *wrongs;
@@ -58,11 +59,13 @@
     
     NSString *text;
     if( [self.step intValue] == 1 )
-        text =[NSString stringWithFormat:@"choose first"];
+        text =[NSString stringWithFormat:@"choose"];
     else
-        text =[NSString stringWithFormat:@"step: %@, wrongs: %@", [self.step stringValue], [self.wrongs stringValue]];
+        text =[NSString stringWithFormat:@"step: %@", [self.step stringValue]];
 
     [self.lblStepsAndWrongs setText:text];
+    
+    [self.tmrCountUp start];
 }
 
 - (void)didDeactivate {
@@ -109,7 +112,8 @@
             [self presentControllerWithName:@"WrongChoiceInterfaceController" context:self.wrongs];
             
             return;
-        }
+        } else
+            [self.tmrCountUp stop];
     }
     
     if( [self.memoirTry intValue ] == [self.step intValue] - 1 )
@@ -161,7 +165,8 @@
 
         [self.answers addObject:color];
         [self pushControllerWithName:@"MemoirInterfaceController"
-                             context:@{@"wrongs" : self.wrongs, @"step" : self.step, @"answers" : self.answers}];
+                             context:@{@"wrongs" : self.wrongs, @"step" : self.step, @"answers" : self.answers,
+                                       @"timer" : self.tmrCountUp}];
         
         return;
     } else
