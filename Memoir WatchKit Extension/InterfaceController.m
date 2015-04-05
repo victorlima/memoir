@@ -19,8 +19,10 @@
 
 @property (strong, nonatomic) NSNumber *step;
 @property (strong, nonatomic) NSNumber *wrongs;
+@property (strong, nonatomic) NSMutableArray *answers;
 @property (strong, nonatomic) NSDictionary *context;
 @property (strong, nonatomic) NSString *correctAnswer;
+@property (strong, nonatomic) NSNumber *memoirTry;
 
 @end
 
@@ -38,21 +40,28 @@
         
         NSNumber *previousStep = (NSNumber *)[ctx objectForKey:@"step"];
         self.step = [NSNumber numberWithInt:[previousStep intValue] + 1];
+        self.answers = (NSMutableArray *)[ctx objectForKey:@"answers"];
     }
     else
     {
         self.step = [NSNumber numberWithInt:1];
         self.wrongs = [NSNumber numberWithInt:0];
+        self.answers = [NSMutableArray array];
     }
     
-    self.correctAnswer = [self fetchCurrentAnswer:self.step];
+    self.memoirTry = [NSNumber numberWithInt: 0];
     
 }
 
 - (void)willActivate {
     [super willActivate];
     
-    NSString *text =[NSString stringWithFormat:@"step: %@, wrongs: %@", [self.step stringValue], [self.wrongs stringValue]];
+    NSString *text;
+    if( [self.step intValue] == 1 )
+        text =[NSString stringWithFormat:@"choose first"];
+    else
+        text =[NSString stringWithFormat:@"step: %@, wrongs: %@", [self.step stringValue], [self.wrongs stringValue]];
+
     [self.lblStepsAndWrongs setText:text];
 }
 
@@ -64,25 +73,7 @@
 #pragma mark - Fetch Answer
 -(NSString *) fetchCurrentAnswer:(NSNumber *)step
 {
-    int a = rand() % 4;
-    switch ( a )
-    {
-        case 0:
-            return @"yellow";
-            break;
-        case 1:
-            return @"red";
-            break;
-        case 2:
-            return @"green";
-            break;
-        case 3:
-            return @"blue";
-            break;
-        default:
-            return @"yellow";
-            break;
-    }
+    return [self.answers objectAtIndex:[self.memoirTry intValue]];
 }
 
 #pragma mark - IBAction's
@@ -109,60 +100,72 @@
 -(void) didSelectColor:(NSString *)color
 {
     
-    BOOL isCorrect = [color isEqualToString:self.correctAnswer];
-    if( !isCorrect )
+    if( [self.step intValue ] > 1 && ([self.memoirTry intValue ] != [self.step intValue] - 1))
     {
-        self.wrongs = [NSNumber numberWithInt:[self.wrongs intValue] + 1];
-        [self presentControllerWithName:@"WrongChoiceInterfaceController" context:nil];
+        BOOL isCorrect = [color isEqualToString:[self fetchCurrentAnswer:self.memoirTry]];
+        if( !isCorrect )
+        {
+            self.wrongs = [NSNumber numberWithInt:[self.wrongs intValue] + 1];
+            [self presentControllerWithName:@"WrongChoiceInterfaceController" context:nil];
+            
+            return;
+        }
+    }
+    
+    if( [self.memoirTry intValue ] == [self.step intValue] - 1 )
+    {
+        if( [color isEqualToString:@"yellow"] )
+        {
+            [self.redButton setBackgroundColor:[UIColor grayColor]];
+            [self.blueButton setBackgroundColor:[UIColor grayColor]];
+            [self.greenButton setBackgroundColor:[UIColor grayColor]];
+            
+            [self.redButton setEnabled: NO];
+            [self.blueButton setEnabled: NO];
+            [self.greenButton setEnabled: NO];
+        }
+        
+        if( [color isEqualToString:@"blue"] )
+        {
+            [self.redButton setBackgroundColor:[UIColor grayColor]];
+            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
+            [self.greenButton setBackgroundColor:[UIColor grayColor]];
+            
+            [self.redButton setEnabled: NO];
+            [self.yellowButton setEnabled: NO];
+            [self.greenButton setEnabled: NO];
+        }
+        
+        if( [color isEqualToString:@"green"] )
+        {
+            [self.redButton setBackgroundColor:[UIColor grayColor]];
+            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
+            [self.blueButton setBackgroundColor:[UIColor grayColor]];
+            
+            [self.redButton setEnabled: NO];
+            [self.yellowButton setEnabled: NO];
+            [self.blueButton setEnabled: NO];
+        }
+        
+        if( [color isEqualToString:@"red"] )
+        {
+            [self.greenButton setBackgroundColor:[UIColor grayColor]];
+            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
+            [self.blueButton setBackgroundColor:[UIColor grayColor]];
+            
+            [self.greenButton setEnabled: NO];
+            [self.yellowButton setEnabled: NO];
+            [self.blueButton setEnabled: NO];
+        }
+        
+
+        [self.answers addObject:color];
+        [self pushControllerWithName:@"MemoirInterfaceController"
+                             context:@{@"wrongs" : self.wrongs, @"step" : self.step, @"answers" : self.answers}];
         
         return;
-    }
-    
-    if( [color isEqualToString:@"yellow"] )
-    {
-        [self.redButton setBackgroundColor:[UIColor grayColor]];
-        [self.blueButton setBackgroundColor:[UIColor grayColor]];
-        [self.greenButton setBackgroundColor:[UIColor grayColor]];
-        
-        [self.redButton setEnabled: NO];
-        [self.blueButton setEnabled: NO];
-        [self.greenButton setEnabled: NO];
-    }
-    
-    if( [color isEqualToString:@"blue"] )
-    {
-        [self.redButton setBackgroundColor:[UIColor grayColor]];
-        [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-        [self.greenButton setBackgroundColor:[UIColor grayColor]];
-
-        [self.redButton setEnabled: NO];
-        [self.yellowButton setEnabled: NO];
-        [self.greenButton setEnabled: NO];
-    }
-    
-    if( [color isEqualToString:@"green"] )
-    {
-        [self.redButton setBackgroundColor:[UIColor grayColor]];
-        [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-        [self.blueButton setBackgroundColor:[UIColor grayColor]];
-
-        [self.redButton setEnabled: NO];
-        [self.yellowButton setEnabled: NO];
-        [self.blueButton setEnabled: NO];
-    }
-
-    if( [color isEqualToString:@"red"] )
-    {
-        [self.greenButton setBackgroundColor:[UIColor grayColor]];
-        [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-        [self.blueButton setBackgroundColor:[UIColor grayColor]];
-
-        [self.greenButton setEnabled: NO];
-        [self.yellowButton setEnabled: NO];
-        [self.blueButton setEnabled: NO];
-    }
-    
-    [self pushControllerWithName:@"MemoirInterfaceController" context:@{@"wrongs" : self.wrongs, @"step" : self.step}];
+    } else
+        self.memoirTry = [NSNumber numberWithInt:[self.memoirTry intValue] + 1];
 }
 
 @end
