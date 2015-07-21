@@ -30,31 +30,20 @@
 
 @implementation InterfaceController
 
-- (void)awakeWithContext:(id)context {
+- (void)awakeWithContext:(id)context
+{
     [super awakeWithContext:context];
     
-    NSDictionary *ctx = (NSDictionary *) context;
-    
-    if( context )
-    {
-        self.wrongs = (NSNumber *)[ctx objectForKey:@"wrongs"];
-        
-        NSNumber *previousStep = (NSNumber *)[ctx objectForKey:@"step"];
-        self.step = [NSNumber numberWithInt:[previousStep intValue] + 1];
-        self.answers = (NSMutableArray *)[ctx objectForKey:@"answers"];
-    }
-    else
-    {
-        self.step = [NSNumber numberWithInt:1];
-        self.wrongs = [NSNumber numberWithInt:0];
-        self.answers = [NSMutableArray array];
-    }
-    
+    self.step = [NSNumber numberWithInt:1];
+    self.wrongs = [NSNumber numberWithInt:0];
+    self.answers = [NSMutableArray array];
     self.memoirTry = [NSNumber numberWithInt: 0];
-    
+
+    [self chooseNextColor];
 }
 
-- (void)willActivate {
+- (void)willActivate
+{
     [super willActivate];
     
     NSString *text;
@@ -66,6 +55,10 @@
     [self.lblStepsAndWrongs setText:text];
     
     [self.tmrCountUp start];
+    
+    if( [self.step intValue] == 1 )
+        [self showFirstColor];
+    
 }
 
 - (void)didDeactivate {
@@ -77,6 +70,112 @@
 -(NSString *) fetchCurrentAnswer:(NSNumber *)step
 {
     return [self.answers objectAtIndex:[self.memoirTry intValue]];
+}
+
+-(void) showFirstColor
+{
+
+    NSString *color = [self.answers objectAtIndex: 0];
+    
+    if( [color isEqualToString:@"yellow"] )
+    {
+        [self.redButton setBackgroundColor:[UIColor grayColor]];
+        [self.blueButton setBackgroundColor:[UIColor grayColor]];
+        [self.greenButton setBackgroundColor:[UIColor grayColor]];
+    }
+    
+    if( [color isEqualToString:@"blue"] )
+    {
+        [self.redButton setBackgroundColor:[UIColor grayColor]];
+        [self.yellowButton setBackgroundColor:[UIColor grayColor]];
+        [self.greenButton setBackgroundColor:[UIColor grayColor]];
+    }
+    
+    if( [color isEqualToString:@"green"] )
+    {
+        [self.redButton setBackgroundColor:[UIColor grayColor]];
+        [self.yellowButton setBackgroundColor:[UIColor grayColor]];
+        [self.blueButton setBackgroundColor:[UIColor grayColor]];
+    }
+    
+    if( [color isEqualToString:@"red"] )
+    {
+        [self.greenButton setBackgroundColor:[UIColor grayColor]];
+        [self.yellowButton setBackgroundColor:[UIColor grayColor]];
+        [self.blueButton setBackgroundColor:[UIColor grayColor]];
+    }
+}
+
+
+-(void) showNextColor
+{
+    for( NSString *color in self.answers)
+    {
+        [self.greenButton setBackgroundColor:[UIColor greenColor]];
+        [self.yellowButton setBackgroundColor:[UIColor yellowColor]];
+        [self.blueButton setBackgroundColor:[UIColor blueColor]];
+        [self.redButton setBackgroundColor:[UIColor redColor]];
+
+        if( [color isEqualToString:@"yellow"] )
+        {
+            [self.redButton setBackgroundColor:[UIColor grayColor]];
+            [self.blueButton setBackgroundColor:[UIColor grayColor]];
+            [self.greenButton setBackgroundColor:[UIColor grayColor]];
+        }
+        
+        if( [color isEqualToString:@"blue"] )
+        {
+            [self.redButton setBackgroundColor:[UIColor grayColor]];
+            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
+            [self.greenButton setBackgroundColor:[UIColor grayColor]];
+        }
+        
+        if( [color isEqualToString:@"green"] )
+        {
+            [self.redButton setBackgroundColor:[UIColor grayColor]];
+            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
+            [self.blueButton setBackgroundColor:[UIColor grayColor]];
+        }
+        
+        if( [color isEqualToString:@"red"] )
+        {
+            [self.greenButton setBackgroundColor:[UIColor grayColor]];
+            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
+            [self.blueButton setBackgroundColor:[UIColor grayColor]];
+        }
+    }
+
+    [self.greenButton setBackgroundColor:[UIColor greenColor]];
+    [self.yellowButton setBackgroundColor:[UIColor yellowColor]];
+    [self.blueButton setBackgroundColor:[UIColor blueColor]];
+    [self.redButton setBackgroundColor:[UIColor redColor]];
+}
+
+-(void) chooseNextColor
+{
+    // randomly choose next color
+    NSString *colorName;
+    int color = random() % 4;
+    switch ( color ) {
+        case 0:
+            colorName = @"yellow";
+            break;
+        case 1:
+            colorName = @"blue";
+            break;
+        case 2:
+            colorName = @"green";
+            break;
+        case 3:
+            colorName = @"red";
+            break;
+        default:
+            break;
+    }
+    
+    [self.answers addObject:colorName];
+    
+    NSLog(@"%@", self.answers);
 }
 
 #pragma mark - IBAction's
@@ -103,70 +202,26 @@
 -(void) didSelectColor:(NSString *)color
 {
     
-    if( [self.step intValue ] > 1 && ([self.memoirTry intValue ] != [self.step intValue] - 1))
+    NSLog(@"selected color: %@", color);
+    
+    BOOL isCorrect = [color isEqualToString:[self fetchCurrentAnswer:self.memoirTry]];
+    if( !isCorrect )
     {
-        BOOL isCorrect = [color isEqualToString:[self fetchCurrentAnswer:self.memoirTry]];
-        if( !isCorrect )
-        {
-            self.wrongs = [NSNumber numberWithInt:[self.wrongs intValue] + 1];
-            [self presentControllerWithName:@"WrongChoiceInterfaceController" context:self.wrongs];
-            
-            return;
-        } else
-            [self.tmrCountUp stop];
-    }
+        self.wrongs = [NSNumber numberWithInt:[self.wrongs intValue] + 1];
+        [self presentControllerWithName:@"WrongChoiceInterfaceController" context:self.wrongs];
+        
+        return;
+    } else
+        [self.tmrCountUp stop];
     
     if( [self.memoirTry intValue ] == [self.step intValue] - 1 )
     {
-        if( [color isEqualToString:@"yellow"] )
-        {
-            [self.redButton setBackgroundColor:[UIColor grayColor]];
-            [self.blueButton setBackgroundColor:[UIColor grayColor]];
-            [self.greenButton setBackgroundColor:[UIColor grayColor]];
-            
-            [self.redButton setEnabled: NO];
-            [self.blueButton setEnabled: NO];
-            [self.greenButton setEnabled: NO];
-        }
-        
-        if( [color isEqualToString:@"blue"] )
-        {
-            [self.redButton setBackgroundColor:[UIColor grayColor]];
-            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-            [self.greenButton setBackgroundColor:[UIColor grayColor]];
-            
-            [self.redButton setEnabled: NO];
-            [self.yellowButton setEnabled: NO];
-            [self.greenButton setEnabled: NO];
-        }
-        
-        if( [color isEqualToString:@"green"] )
-        {
-            [self.redButton setBackgroundColor:[UIColor grayColor]];
-            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-            [self.blueButton setBackgroundColor:[UIColor grayColor]];
-            
-            [self.redButton setEnabled: NO];
-            [self.yellowButton setEnabled: NO];
-            [self.blueButton setEnabled: NO];
-        }
-        
-        if( [color isEqualToString:@"red"] )
-        {
-            [self.greenButton setBackgroundColor:[UIColor grayColor]];
-            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-            [self.blueButton setBackgroundColor:[UIColor grayColor]];
-            
-            [self.greenButton setEnabled: NO];
-            [self.yellowButton setEnabled: NO];
-            [self.blueButton setEnabled: NO];
-        }
-        
+        [self chooseNextColor];
+        [self showNextColor];
 
-        [self.answers addObject:color];
-        [self pushControllerWithName:@"MemoirInterfaceController"
-                             context:@{@"wrongs" : self.wrongs, @"step" : self.step, @"answers" : self.answers,
-                                       @"timer" : self.tmrCountUp}];
+        self.step = [NSNumber numberWithInt:([self.step intValue] + 1)];
+        
+        NSLog(@"%@", self.answers);
         
         return;
     } else
