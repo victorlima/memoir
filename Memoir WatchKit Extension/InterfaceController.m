@@ -17,6 +17,10 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceButton *greenButton;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *lblStepsAndWrongs;
 @property (weak, nonatomic) IBOutlet WKInterfaceTimer *tmrCountUp;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *yellowImage;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *greenImage;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *blueImage;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *redImge;
 
 @property (strong, nonatomic) NSNumber *step;
 @property (strong, nonatomic) NSNumber *wrongs;
@@ -76,79 +80,72 @@
 {
 
     NSString *color = [self.answers objectAtIndex: 0];
-    
     if( [color isEqualToString:@"yellow"] )
     {
-        [self.redButton setBackgroundColor:[UIColor grayColor]];
-        [self.blueButton setBackgroundColor:[UIColor grayColor]];
-        [self.greenButton setBackgroundColor:[UIColor grayColor]];
+        [self.yellowImage setImageNamed:@"funny"];
+        [self.yellowImage startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
+        
     }
     
     if( [color isEqualToString:@"blue"] )
     {
-        [self.redButton setBackgroundColor:[UIColor grayColor]];
-        [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-        [self.greenButton setBackgroundColor:[UIColor grayColor]];
+        [self.blueImage setImageNamed:@"funny"];
+        [self.blueImage startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
     }
     
     if( [color isEqualToString:@"green"] )
     {
-        [self.redButton setBackgroundColor:[UIColor grayColor]];
-        [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-        [self.blueButton setBackgroundColor:[UIColor grayColor]];
+        [self.greenImage setImageNamed:@"funny"];
+        [self.greenImage startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
     }
     
     if( [color isEqualToString:@"red"] )
     {
-        [self.greenButton setBackgroundColor:[UIColor grayColor]];
-        [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-        [self.blueButton setBackgroundColor:[UIColor grayColor]];
+        [self.redImge setImageNamed:@"funny"];
+        [self.redImge startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
     }
+    
+    [self performSelector:@selector(stopAnimation:) withObject:color afterDelay:1.2f];
 }
 
 
 -(void) showNextColor
 {
-    for( NSString *color in self.answers)
+    NSString *color = [self.answers lastObject];
+    if( [color isEqualToString:@"yellow"] )
     {
-        [self.greenButton setBackgroundColor:[UIColor greenColor]];
-        [self.yellowButton setBackgroundColor:[UIColor yellowColor]];
-        [self.blueButton setBackgroundColor:[UIColor blueColor]];
-        [self.redButton setBackgroundColor:[UIColor redColor]];
+        [self.yellowImage setImageNamed:@"funny"];
+        [self.yellowImage startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
 
-        if( [color isEqualToString:@"yellow"] )
-        {
-            [self.redButton setBackgroundColor:[UIColor grayColor]];
-            [self.blueButton setBackgroundColor:[UIColor grayColor]];
-            [self.greenButton setBackgroundColor:[UIColor grayColor]];
-        }
-        
-        if( [color isEqualToString:@"blue"] )
-        {
-            [self.redButton setBackgroundColor:[UIColor grayColor]];
-            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-            [self.greenButton setBackgroundColor:[UIColor grayColor]];
-        }
-        
-        if( [color isEqualToString:@"green"] )
-        {
-            [self.redButton setBackgroundColor:[UIColor grayColor]];
-            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-            [self.blueButton setBackgroundColor:[UIColor grayColor]];
-        }
-        
-        if( [color isEqualToString:@"red"] )
-        {
-            [self.greenButton setBackgroundColor:[UIColor grayColor]];
-            [self.yellowButton setBackgroundColor:[UIColor grayColor]];
-            [self.blueButton setBackgroundColor:[UIColor grayColor]];
-        }
     }
+    
+    if( [color isEqualToString:@"blue"] )
+    {
+        [self.blueImage setImageNamed:@"funny"];
+        [self.blueImage startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
+    }
+    
+    if( [color isEqualToString:@"green"] )
+    {
+        [self.greenImage setImageNamed:@"funny"];
+        [self.greenImage startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
+    }
+    
+    if( [color isEqualToString:@"red"] )
+    {
+        [self.redImge setImageNamed:@"funny"];
+        [self.redImge startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
+    }
+    
+    [self performSelector:@selector(stopAnimation:) withObject:color afterDelay:1.2f];
+}
 
-    [self.greenButton setBackgroundColor:[UIColor greenColor]];
-    [self.yellowButton setBackgroundColor:[UIColor yellowColor]];
-    [self.blueButton setBackgroundColor:[UIColor blueColor]];
-    [self.redButton setBackgroundColor:[UIColor redColor]];
+-(void) stopAnimation:(NSString *)color
+{
+    [self.yellowImage setImageNamed:@"yellow"];
+    [self.redImge setImageNamed:@"red"];
+    [self.blueImage setImageNamed:@"blue"];
+    [self.greenImage setImageNamed:@"green"];
 }
 
 -(void) chooseNextColor
@@ -210,6 +207,8 @@
         self.wrongs = [NSNumber numberWithInt:[self.wrongs intValue] + 1];
         [self presentControllerWithName:@"WrongChoiceInterfaceController" context:self.wrongs];
         
+        self.memoirTry = [NSNumber numberWithInt: 0];
+        
         return;
     } else
         [self.tmrCountUp stop];
@@ -218,8 +217,9 @@
     {
         [self chooseNextColor];
         [self showNextColor];
-
+        
         self.step = [NSNumber numberWithInt:([self.step intValue] + 1)];
+        self.memoirTry = [NSNumber numberWithInt: 0];
         
         NSLog(@"%@", self.answers);
         
