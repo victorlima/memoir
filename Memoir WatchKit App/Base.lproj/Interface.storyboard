@@ -88,20 +88,33 @@
             <objects>
                 <controller identifier="WrongChoiceInterfaceController" id="JEE-Bc-nBb" customClass="WrongInterfaceController">
                     <items>
-                        <button width="1" alignment="center" verticalAlignment="center" title="OK! Got It" id="OJc-z1-OPS">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="boldSystem" pointSize="15"/>
-                            <connections>
-                                <action selector="dismiss:" destination="JEE-Bc-nBb" id="Tm3-1z-F9D"/>
-                            </connections>
-                        </button>
                         <label width="1" alignment="left" text="..." textAlignment="center" numberOfLines="0" id="Jy9-b0-bbi">
                             <color key="textColor" red="1" green="0.01775118782" blue="0.084778211849999993" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="boldSystem" pointSize="16"/>
                         </label>
+                        <group width="1" alignment="left" layout="vertical" id="iT9-eu-xUh">
+                            <items>
+                                <button width="1" alignment="center" title="OK! Got It" id="OJc-z1-OPS">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.044643748780385462" green="1" blue="0.13970587633406417" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                    <connections>
+                                        <action selector="dismiss:" destination="JEE-Bc-nBb" id="Tm3-1z-F9D"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Start Over" id="FNJ-Vc-RLJ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="1" green="0.13051916569999999" blue="0.110020744" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                    <connections>
+                                        <action selector="startOver:" destination="JEE-Bc-nBb" id="qXy-cf-rMy"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
                     <connections>
+                        <outlet property="btnStartOver" destination="FNJ-Vc-RLJ" id="Lo5-Ju-oYf"/>
                         <outlet property="lblWrongs" destination="Jy9-b0-bbi" id="70i-rY-dcu"/>
                     </connections>
                 </controller>

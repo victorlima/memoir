@@ -38,12 +38,7 @@
 {
     [super awakeWithContext:context];
     
-    // initial setup
-    self.step = [NSNumber numberWithInt:1];
-    self.wrongs = [NSNumber numberWithInt:0];
-    self.answers = [NSMutableArray array];
-    self.memoirTry = [NSNumber numberWithInt: 0];
-
+    [self initialSetup];
     [self chooseNextColor];
 }
 
@@ -200,6 +195,27 @@
         return;
     } else
         self.memoirTry = [NSNumber numberWithInt:[self.memoirTry intValue] + 1];
+}
+
+#pragma mark - NSNotificationCenter method's
+-(void) startOver
+{
+    [self initialSetup];    
+    [self chooseNextColor];
+    
+    NSString *color = [self.answers objectAtIndex: 0];
+    [self showColor: color];
+}
+
+-(void) initialSetup
+{
+    // initial setup
+    self.step = [NSNumber numberWithInt:1];
+    self.wrongs = [NSNumber numberWithInt:0];
+    self.answers = [NSMutableArray array];
+    self.memoirTry = [NSNumber numberWithInt: 0];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startOver) name:@"START_OVER_NOTIFICATION" object:nil];
 }
 
 @end

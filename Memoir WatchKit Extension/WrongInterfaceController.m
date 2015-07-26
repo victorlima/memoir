@@ -51,6 +51,12 @@
 {
     [self dismissController];
 }
+
+-(IBAction)startOver:(id)sender
+{
+    [self dismissController];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"START_OVER_NOTIFICATION" object:nil];
+}
 @end
 
 
