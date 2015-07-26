@@ -38,6 +38,7 @@
 {
     [super awakeWithContext:context];
     
+    // initial setup
     self.step = [NSNumber numberWithInt:1];
     self.wrongs = [NSNumber numberWithInt:0];
     self.answers = [NSMutableArray array];
@@ -61,7 +62,10 @@
     [self.tmrCountUp start];
     
     if( [self.step intValue] == 1 )
-        [self showFirstColor];
+    {
+        NSString *color = [self.answers objectAtIndex: 0];
+        [self showColor: color];
+    }
     
 }
 
@@ -76,47 +80,13 @@
     return [self.answers objectAtIndex:[self.memoirTry intValue]];
 }
 
--(void) showFirstColor
+-(void) showColor:(NSString *) color
 {
 
-    NSString *color = [self.answers objectAtIndex: 0];
     if( [color isEqualToString:@"yellow"] )
     {
         [self.yellowImage setImageNamed:@"funny"];
         [self.yellowImage startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
-        
-    }
-    
-    if( [color isEqualToString:@"blue"] )
-    {
-        [self.blueImage setImageNamed:@"funny"];
-        [self.blueImage startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
-    }
-    
-    if( [color isEqualToString:@"green"] )
-    {
-        [self.greenImage setImageNamed:@"funny"];
-        [self.greenImage startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
-    }
-    
-    if( [color isEqualToString:@"red"] )
-    {
-        [self.redImge setImageNamed:@"funny"];
-        [self.redImge startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
-    }
-    
-    [self performSelector:@selector(stopAnimation:) withObject:color afterDelay:1.2f];
-}
-
-
--(void) showNextColor
-{
-    NSString *color = [self.answers lastObject];
-    if( [color isEqualToString:@"yellow"] )
-    {
-        [self.yellowImage setImageNamed:@"funny"];
-        [self.yellowImage startAnimatingWithImagesInRange:NSMakeRange(0, 2) duration:1.0f repeatCount:0];
-
     }
     
     if( [color isEqualToString:@"blue"] )
@@ -151,6 +121,7 @@
 -(void) chooseNextColor
 {
     // randomly choose next color
+    
     NSString *colorName;
     int color = random() % 4;
     switch ( color ) {
@@ -196,6 +167,7 @@
     [self didSelectColor: @"red"];
 }
 
+#pragma mark - logic when user select a color
 -(void) didSelectColor:(NSString *)color
 {
     
@@ -216,7 +188,9 @@
     if( [self.memoirTry intValue ] == [self.step intValue] - 1 )
     {
         [self chooseNextColor];
-        [self showNextColor];
+        
+        NSString *c = [self.answers lastObject];
+        [self showColor: c];
         
         self.step = [NSNumber numberWithInt:([self.step intValue] + 1)];
         self.memoirTry = [NSNumber numberWithInt: 0];
