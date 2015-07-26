@@ -532,6 +532,7 @@
 				INFOPLIST_FILE = Memoir/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.concretesolutions.Memoir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -544,6 +545,7 @@
 				INFOPLIST_FILE = Memoir/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.concretesolutions.Memoir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -594,7 +596,7 @@
 				);
 				IBSC_MODULE = Memoir_WatchKit_Extension;
 				INFOPLIST_FILE = "Memoir WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.ConcreteSolutions.Memoir.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.concretesolutions.Memoir.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos8.3;
@@ -612,7 +614,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				IBSC_MODULE = Memoir_WatchKit_Extension;
 				INFOPLIST_FILE = "Memoir WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.ConcreteSolutions.Memoir.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.concretesolutions.Memoir.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos8.3;
@@ -631,6 +633,7 @@
 				);
 				INFOPLIST_FILE = "Memoir WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.concretesolutions.Memoir.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
 			};
@@ -641,6 +644,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Memoir WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.concretesolutions.Memoir.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
 			};
