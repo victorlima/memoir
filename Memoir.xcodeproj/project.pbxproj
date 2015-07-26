@@ -594,6 +594,7 @@
 				);
 				IBSC_MODULE = Memoir_WatchKit_Extension;
 				INFOPLIST_FILE = "Memoir WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ConcreteSolutions.Memoir.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos8.3;
@@ -611,6 +612,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				IBSC_MODULE = Memoir_WatchKit_Extension;
 				INFOPLIST_FILE = "Memoir WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ConcreteSolutions.Memoir.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos8.3;
