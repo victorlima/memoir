@@ -114,7 +114,6 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="btnStartOver" destination="FNJ-Vc-RLJ" id="Lo5-Ju-oYf"/>
                         <outlet property="lblWrongs" destination="Jy9-b0-bbi" id="70i-rY-dcu"/>
                     </connections>
                 </controller>
