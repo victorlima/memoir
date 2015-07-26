@@ -46,15 +46,8 @@
 {
     [super willActivate];
     
-    NSString *text;
-    if( [self.step intValue] == 1 )
-        text =[NSString stringWithFormat:@"choose"];
-    else
-        text =[NSString stringWithFormat:@"step: %@", [self.step stringValue]];
-
+    NSString *text = [NSString stringWithFormat:@"step: %@", [self.step stringValue]];
     [self.lblStepsAndWrongs setText:text];
-    
-    [self.tmrCountUp start];
     
     if( [self.step intValue] == 1 )
     {
@@ -177,8 +170,7 @@
         self.memoirTry = [NSNumber numberWithInt: 0];
         
         return;
-    } else
-        [self.tmrCountUp stop];
+    }
     
     if( [self.memoirTry intValue ] == [self.step intValue] - 1 )
     {
@@ -189,6 +181,9 @@
         
         self.step = [NSNumber numberWithInt:([self.step intValue] + 1)];
         self.memoirTry = [NSNumber numberWithInt: 0];
+        
+        NSString *text = [NSString stringWithFormat:@"step: %@", [self.step stringValue]];
+        [self.lblStepsAndWrongs setText:text];
         
         NSLog(@"%@", self.answers);
         
@@ -214,6 +209,9 @@
     self.wrongs = [NSNumber numberWithInt:0];
     self.answers = [NSMutableArray array];
     self.memoirTry = [NSNumber numberWithInt: 0];
+    
+    [self.tmrCountUp setDate:[NSDate date]];
+    [self.tmrCountUp start];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startOver) name:@"START_OVER_NOTIFICATION" object:nil];
 }
